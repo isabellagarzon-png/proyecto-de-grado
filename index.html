@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inteligencia de datos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+  <!-- COMIENZO DEL CUERPO DE LA PAGINA-->
+<body>
+ <header>
+  <a href="#inicio" class="logo-enlace">
+    <img src="assets/LOGOINTELIGENCIADEDATOSPOSITIVA.png" alt="Logo de la empresa" class="logo">
+  </a>
+
+    <nav> <!--ETIQUETA SEMANTICA QUE INDICA QUE ES UN BLOQUE DE NAVEGACION-->
+    <a href = "#inicio"> Inicio </a>
+    <a href = "#nosotros"> Nosotros </a>
+    <a href = "#servicios"> Servicios </a>
+    <a href = "#encuentranos"> Encuéntranos </a>
+    <a href = "#contactanos"> Contáctanos</a>
+    </nav>
+
+  <div class="header-actions">
+    <button class="lang-switch">ES / EN / PT </button>  <!-- BOTON DE IDIOMA-->
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">  <!--ESTABLECEMOS MENU HAMBURGUESA-->
+      <span></span>   <!--CADA SPAN ES UNA LINEA DEL MENU-->
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-texto">
+      <h1>Inteligencia que convierte <br> datos en decisiones</h1>
+      <p>Transformamos tus datos en información estratégica para impulsar decisiones <br> más inteligentes.</p>
+      <a href="#nosotros" class="btn-primario">Comencemos</a>
+    </div>
+    
+    <img src="assets/FORMAHERO..png" alt="" class="hero-forma">
+  </section>
+ 
+  <script src ="script.js"></script> <!--CONECTAMOS CON JAVAS-->
+
+<section id="nosotros">
+  <h2>¿Quiénes somos?</h2>
+  <p>Nos encargamos de recopilar, procesar y analizar tu información para impulsar las mejores decisiones de tu negocio. <br>Sé parte de nuestra comunidad y entra en el mundo de la Inteligencia de datos</p>
+  
+  <div class="pilares">
+    <article>
+      <div class="pilar-icono pilar-icono-mision">🚩</div>
+      <h3>Misión</h3>
+      <p>Transformamos grandes volúmenes de <strong>datos</strong> en <strong>información valiosa, comprensible</strong> y <strong>accionable</strong>
+      para que organizaciones tomen decisiones más <strong>acertadas</strong> y <strong>estratégicas</strong>.</p>
+    </article>
+
+    <article>
+      <div class="pilar-icono pilar-icono-vision">💡</div>
+      <h3>Visión</h3>
+      <p>Buscamos la <strong>innovación estratégica</strong> en el mundo digital que ayude a las entidades, organizaciones y empresas en crecimiento.</p>
+    </article>
+
+    <article>
+      <div class="pilar-icono pilar-icono-proposito">🎯</div>
+      <h3>Propósito</h3>
+      <p>Queremos <strong>impulsar</strong> el <strong>desarrollo</strong> de esas empresas que desseen despegar en el mundo comercial con estrategias <strong>claras</strong> y <strong>rentables</strong>.</p>
+    </article>
+</section>
+
+<section id="servicios">
+  <svg class="ola" viewBox="0 0 1440 100" preserveAspectRatio="none">
+  <path d="M0,60 C360,10 1080,90 1440,40 L1440,100 L0,100 Z" fill="#C7D2EA" opacity="0.5"></path>
+  <path d="M0,70 C360,30 1080,100 1440,50 L1440,100 L0,100 Z" fill="#6E90C4" opacity="0.7"></path>
+  <path d="M0,80 C360,50 1080,100 1440,60 L1440,100 L0,100 Z" fill="#0B1F3D"></path>
+</svg>
+  <h2>¿Qué ofrecemos?</h2>
+  <p>Te garantizamos una experiencia innovadora y útil para que tu empresa logre alcanzar el éxito que tanto quieres</p>
+  <a href="#contactanos" class="btn-primario">Más detalles</a>
+
+  <div class="servicios-grid">
+    <article class="servicio-asesorias">
+      <h3>Asesorías personalizadas</h3>
+      <p>Estarás 100% en contacto con nuestros asesores que te guiarán en el proceso de tu desarrollo</p>
+    </article>
+
+    <article class="servicio-predictivos">
+      <h3>Modelos predictivos</h3>
+      <p>Te ofrecemos algoritmos que ayuden a recopilar y analizar mejor tus datos</p>
+    </article>
+
+    <article class="servicio-ingenieria">
+      <h3>Ingeniería de datos</h3>
+      <p>Construimos sistemas de automatizacion dentro de tu empresa, que extraen, mueven y guardan mejor tus datos</p>
+    </article>
+
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+:root { /*ES UN SELECTOR ESPECUAL QUE REPRESENTA "TODO EL DOCUMENTO"*/
+    --azul-marino:#243E6E;
+    --naranja:#FF5043;
+    --gris-claro:#EFF1F4;
+    --gris-oscuro:#BEC2C6;
+    --negro:#0D1828;
+    --blanco:#ffffff;
+}
+
+:root { 
+    --fuente-titulos:'Outfit', sans-serif;
+    --fuente-texto: Helvetica, Arial, sans-serif;
+}
+
+body { 
+    font-family: var(--fuente-texto);
+}
+
+h1, h1, h3 { 
+    font-family: var(--fuente-titulos);
+}
+
+.logo { 
+    height: 45px;
+    width: auto;
+    display: block;
+}
+
+.logo-enlace { 
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+html { 
+    scroll-behavior: smooth; /*ESTABLECE UNA ANIMACION SUAVE A LA HORA DE SCROLLEAR*/
+}
+
+header {  /*CREAMOS NUESTRO HEADER*/
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--azul-marino);
+    font-family: var(--fuente-texto);
+    padding: 15px 40px;   
+    display: flex;         /*LOS ELEMENTOS VAN ENFILADOS */
+    align-items: center;   /* CENTRA EL LOGO VERTICALMENTE, EL NAV Y EL BOTON ENTRE SÍ*/
+    justify-content: space-between;  /*EMPUJA A LOS HIJOS DIRECTOS (logo, nav, botón) HACIA LOS EXTREMOS OPUESTOS */
+}
+nav a {
+    text-decoration: none;
+    color: var(--blanco);  /*USA EL COLOR DE TEXTO NORMAL EN VEZ DEL AZUL O MORADO DE UN LINK*/
+    cursor: pointer;
+    padding: 6px 18px;
+    border-radius: 999px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: var(--naranja);
+}
+nav {  /*ORDENA EL CONTENIDO DEL HEADER DE MANERA CENTRADA*/
+    display: flex;
+    align-items: center;
+    justify-content: center;  /*CENTRA LOS H3 DENTRO DEL ESPACIO QUE EL NAV TIENE DISPONIBLE*/
+    gap: 24px;   /*ESPACIO ENTRE CADA ELEMENTO HIJO SIN NECESIDAD DE MARGENES*/
+    flex: 1;    /*le dice al nav "ocupa todo el espacio libre que quede en el header" */
+    border-radius: 30px;
+}
+
+.header-actions {
+    display:flex;
+    align-items: center;
+    gap: 16px;   
+}
+
+.menu-toggle {    /*MENU HAMBURGUESA*/
+    display: none;   /*OCULTO POR DEFECTO EN PANTALLAS PEQUEÑAS*/
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-toggle span { 
+    width: 100%;
+    height: 3px;
+    background-color: #042C53;
+    border-radius:2px;
+}
+
+.hero-texto{  /*INDICAMOS QUE EL TEXTO VA EN UNA LINEA*/
+    flex:1;
+    position: relative;
+    z-index: 2;  /*EL TEXTO QUEDA POR ENCIMA DE LA IMAGEN*/
+}
+
+.hero-texto h1{  /*ESTABLECEMOS EL TAMAÑO DEL TEXTO PRINCIPAL */
+    font-size: 3rem;
+    line-height: 1.15;
+}
+
+.hero-texto p {  /*CAMBIAMOS EL TAMAÑO DEL TEXTO DE ABAJO*/
+    font-size: 1.30rem;
+}
+
+
+.hero { /*ESTABLECE EL COLOR Y LA FORMA DEL HERO*/
+    position: relative;   /*MARCO DE REFERENCIA PARA HERO-FORMA*/
+    overflow: hidden;   /*RECORTA LO QUE SALGA DEL HERO*/
+    height:350px ;
+    margin-top: 3%;
+    display: flex;            /*POSICIONA EL TEXTO Y EL VIDEO UNO AL LADO DEL OTRO*/
+    background: linear-gradient(120deg, #ffffff 60%, var(--gris-claro) 60%);
+    align-items: center;
+    gap: 40px;
+    padding: 60px 5%;
+}
+
+.hero-forma { 
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 75%;
+    width: auto;
+    z-index: 1;
+}
+
+.btn-primario {
+    text-decoration: none;
+    display: inline-block;   /*PERMITE QUE EL PADDING FUNCIONE BIEN*/
+    border-radius: 999px;
+    background-color:#085294;
+    cursor: pointer;
+    font-family: var(--fuente-texto);
+    font-size: 1.15rem;
+    padding: 14px 28px;
+    color:snow;
+    align-content: center;
+}
+
+.btn-primario:hover {
+    background-color: #0b72cd;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column; /*CAMBIA LA DIRECCION EN LA QUE FLEX ACOMODA A SUS HIJOS*/
+        text-align: center;
+        height: auto;
+    }
+        nav { 
+            display: none;     /*OCULTA EL MENU NORMAL EN PANTALLAS GRANDES*/
+        }
+        nav.abierto {
+            display:flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;   /*JUSTO DONDE TERMINA EL HEADER 100% DE SU PROPIA ALTURA, SIN IMPORTAR CUANTO
+            MIDA, SE VA A QUEDAR PEGADO JUSTO DEBAJO SIN SUPERPONERSE A LO QUE ESTÉ ABAJO*/
+            left: 0;
+            right: 0;
+            background-color: #dae8f7;
+            padding: 20px;
+            z-index: 10;   /*DECIDE QUE ELEMENTO SE DIBUJA MAS ARRIBA, CUANDO DOS SE SUPERPONEN EL NUMERO MAS
+            ARRIBA QUEDA ENCIMA DE TODO, SIN ESTO EL ORDEN NO TIENE ESPECIFICIDAD Y EL NAVEGADOR ABRE COSAS SUPERPUESTAS
+            QUE NO DEBERÍA */
+        }
+        .menu-toggle {
+            display: flex;     /*MUESTRA LA HAMBURGUESA*/
+        }
+    }
+
+    .hero-texto {
+        flex: none;
+    }
+/*COMENZAMOS CON LA PARTE DE NOSOTROS */
+.pilares {     
+    display:flex;
+    gap: 32px;
+    margin: 48px 0;
+}
+
+#nosotros h2 {
+    font-family: 'Poppins';
+    font-size: 2.5rem;
+    text-align:initial;
+    color: #042C53;
+    margin-left: 40px;
+}
+
+#nosotros p {
+    font-family: 'Poppins';
+    margin-left: 40px;
+    font-size: 1.2rem;
+}
+
+#nosotros h1 {
+    font-family: 'Poppins';
+    font-size: 1.1rem;
+    margin: 40px;
+}
+.pilares article { 
+    font-family: 'Poppins';
+    flex: 1;      /*SE REPARTE EL ANCHO EN PARTES IGUALES PARA LAS 3 SECCIONES*/
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 32px 28px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);  /*ESTABLECE UNA SOMBRA SUAVE PARA QUE NO SE VEA PEGADO AL FONDO*/
+/*ESE BOX SHADOW DICE: sin desplazamiento horizontal (0), 8px hacia abajo, 20px de difuminado con un negro muy trans
+parente, (6% de opacidad -> 0,6)*/
+    border: none;
+transition: transform 0,25s ease, box-shadow 0,25s ease;  /*HACE QUE SE HAGAN CAMBIOS SUAVES EN LA POSICION Y SOMBRA EN 
+0,25 SEGUNDOS EN LUGAR DE GOLPE*/
+}
+
+.pilares article:hover {
+    transform: translateY(-8px);  /*MUEVE EL ELEMENTO 8PX HACIA ARRIBA /LOS NEGATIVOS EN Y SUBEN Y LOS POSITIVOS BAJAN
+NO AFECTA OTROS ELEMENTOS, SOLO FLOTA SOBRE SU POSICION ORIGINAL*/
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);  /*LA SOMBRA CRECE Y SE HACE MAS OSCURA*/
+}
+
+.pilar-icono { 
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+}
+
+.pilar-icono-mision { background-color: #032d6b; }
+.pilar-icono-vision { background-color: #045453; }
+.pilar-icono-proposito { background-color: #372094; }
+
+#servicios {
+    background-color: #ffffff;
+    position: relative;
+    padding-top: 100px; /*PARA QUE LA OLA NO TOQUE EL TITULO DE ARRIBA*/
+}
+
+#servicios p {
+    font-family: 'Poppins';
+    font-size: 1.2rem;
+    margin: 40px;
+}
+
+.ola { 
+    position: absolute;
+    top: -1px;   /*PEGADO JUSTO EN EL BORDE SUPERIOR DE LA SECCIO*/
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: block;
+}
+#servicios h2 {
+    font-family: 'Poppins';
+    margin-left: 40px;
+    font-size: 2.5rem;
+    color: #042C53;
+}
+
+#servicios > p {
+    color: #333333;
+}
+
+.btn-primario {
+    border-radius: 999px;
+    background-color: #085294;
+    color:#ffffff;
+    font-family: 'Poppins';
+    padding: 12px 25px;
+    margin-left: 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+}
+
+.servicios a:hover {
+    background-color: #0b72cd
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /*ESTABLECE DOS COLMNAS DE IGUAL ANCHO*/
+  gap: 24px;
+  margin: 40px;
+}
+
+.servicios-grid article {
+    padding: 32px 28px;
+    margin-top: 30px;
+    font-family: 'Poppins';
+    border-radius: 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.servicio-ingenieria  {
+    grid-column: 1/-1;  /*OCUPA DESDE LA COLUMNA 1 HASTA LA ULTIMA*/
+
+}
+
+.servicio-asesorias {
+    background-color: #6EA8FE;
+    color: #042C53;
+}
+.servicio-predictivos {background-color: #042C53;}
+.servicio-ingenieria {background-color: #141e2e;}
